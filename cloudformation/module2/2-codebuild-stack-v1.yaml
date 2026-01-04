@@ -20,7 +20,7 @@ Parameters:
     MaxLength: 255
     AllowedPattern: ^[a-zA-Z][-a-zA-Z0-9]*$
     ConstraintDescription: Should contain uppercase, lowercase letters and digits from 0 to 9 only
-    Default: westworld-codebuild-for-website-hosting
+    Default: StaticWebsiteHostingToS3
   paramGitHubLink:
     Type: String
     Description: Provide your GitHub link with source code for static website
@@ -128,7 +128,7 @@ Resources:
       LogsConfig:
         CloudWatchLogs:
           Status: ENABLED
-          GroupName: !Sub ${paramCodeBuildProjectName}-cloud-watch-logs
+          GroupName: !Sub ${paramCodeBuildProjectName}-CloudWatchLogs
       Tags:
         - Key: mastering-cloudformation
           Value:  !Ref paramUniqueTagName
